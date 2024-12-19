@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contentJuego3 {
+  min-height: 100vh;
+  background-color: #000;
+  padding: 50px 0;
+}
+
+.contentJuego3 .container {
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contentJuego3 .title h2 {
+  color: #fff;
+  text-align: center;
+  font-family: "AMX", "Roboto", sans-serif;
+  font-size: 68px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.contentJuego3 .title p {
+  color: #fff;
+  font-family: "AMX", "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.ContentItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 37px;
+  grid-row-gap: 28px;
+  max-width: 560px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.ContentItems .item {
+  position: relative;
+  height: 160px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.ContentItems .contentImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ContentItems .contentImg img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.ContentItems .item div:last-child {
+  color: #fff;
+  text-align: center;
+  font-family: AMX;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  position: absolute;
+  border-radius: 11px;
+  background: rgba(53, 53, 53, 0.94);
+  bottom: 7px;
+  left: 50%;
+  width: 80%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.ContentItems .item::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: -13px;
+  background-image: url(img/cruz.svg);
+  width: 26px;
+  height: 26px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 2;
+}
+
+.ContentItems .item.active::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: inset 0 0 0 4px #da291c;
+  border-radius: 10px;
+}
+
+.ContentItems .item.true.active::after {
+  box-shadow: inset 0 0 0 4px #20b038;
+}
+
+.ContentItems .item.active::before {
+  opacity: 1;
+}
+
+.ContentItems .item.true.active::before {
+  background-image: url(img/check.svg);
+}
+
+@media (min-width: 640px) {
+  .contentJuego3 .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contentJuego3 .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contentJuego3 .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1260px) {
+  .contentJuego3 .container {
+    max-width: 1260px;
+  }
+}
+
+@media (min-width: 1460px) {
+  .contentJuego3 .container {
+    max-width: 1460px;
+  }
+}
+
+.contentJuego3 .btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 12px;
+}
+
+.contentJuego3 .btns button {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 40px;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 600;
+  background: #9b9b9b;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  pointer-events: none;
+}
+
+.contentJuego3 .btns button.active {
+  background: #da291c;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+@media (max-width: 1024px) {
+  .contentJuego3 .title h2 {
+    font-size: 29px;
+  }
+  .contentJuego3 .title p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ContentItems {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+  .ContentItems .item div:last-child {
+    bottom: 3px;
+    font-size: 10px;
+    width: 75%;
+    padding: 5px 7px;
+  }
+}
+
+@media (max-width: 560px) {
+  .contentJuego3 .title h2 {
+    font-size: 24px;
+  }
+  .contentJuego3 .title p {
+    font-size: 14px;
+  }
+  .ContentItems .item {
+    height: 142px;
+  }
+  .ContentItems {
+    margin-top: 30px;
+  }
+}
